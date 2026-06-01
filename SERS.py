@@ -123,7 +123,7 @@ def verificar_oxigenio(oxigenio, indice_ciclo):
         return "CRITICO | Oxigenio em nivel critico"
     elif oxigenio >= 80 and oxigenio < 90:
         pts_ciclos[indice_ciclo].append(1)
-        return "ATENCAO | Falta de oxigenio"
+        return "ATENCAO | Nivel de oxigenio abaixo do ideal"
     else:
         pts_ciclos[indice_ciclo].append(0)
         return "NORMAL | Oxigenio estavel"
@@ -187,28 +187,15 @@ def classificacao_final(soma_final):
         return "MISSAO ESTAVEL"
 
 def calcular_consumo_energetico(potencia_kw, horas):
-    """
-    Calcula a energia consumida pelo modulo no ciclo.
-    Formula: Energia (kWh) = Potencia (kW) x Tempo (h)
-    Retorna o valor em kWh.
-    """
+
     return potencia_kw * horas
 
 def calcular_geracao_solar(geracao_kw, horas):
-    """
-    Calcula a energia gerada pelos paineis solares fotovoltaicos no ciclo.
-    Formula: Energia gerada (kWh) = Potencia gerada (kW) x Tempo (h)
-    Paineis solares sao a principal fonte de energia renovavel em missoes espaciais.
-    Retorna o valor em kWh.
-    """
+
     return geracao_kw * horas
 
 def calcular_eficiencia_solar(irradiancia_w_m2, geracao_kw, area_m2):
-    """
-    Calcula a eficiencia real dos paineis solares no ciclo.
-    Formula: Eficiencia (%) = (Potencia gerada (W) / (Irradiancia (W/m²) x Area (m²))) x 100
-    Compara com a eficiencia de referencia para identificar degradacao.
-    """
+
     potencia_incidente = irradiancia_w_m2 * area_m2
     potencia_gerada_w  = geracao_kw * 1000
     if potencia_incidente == 0:
@@ -217,11 +204,7 @@ def calcular_eficiencia_solar(irradiancia_w_m2, geracao_kw, area_m2):
     return round(eficiencia, 2)
 
 def gerar_alerta_energetico(consumo_kwh, geracao_kwh, eficiencia, eficiencia_ref):
-    """
-    Gera alertas especificos para o sistema energetico renovavel do modulo.
-    Avalia balanco energetico (geracao vs consumo) e degradacao dos paineis solares.
-    Tomada de decisao automatizada baseada em thresholds energeticos.
-    """
+
     alertas = []
     balanco = geracao_kwh - consumo_kwh
 
@@ -243,13 +226,7 @@ def gerar_alerta_energetico(consumo_kwh, geracao_kwh, eficiencia, eficiencia_ref
     return "\n".join(alertas)
 
 def calcular_sustentabilidade(energia_gerada_total, energia_consumida_total):
-    """
-    Calcula o Indice de Sustentabilidade Energetica (ISE) da missao.
-    ISE = (Energia renovavel gerada / Energia total consumida) x 100
-    ISE >= 80%: Missao sustentavel
-    ISE >= 50%: Missao com dependencia parcial de reservas
-    ISE <  50%: Missao com alto consumo de reservas nao renovaveis
-    """
+
     if energia_consumida_total == 0:
         return 0.0
     ise = (energia_gerada_total / energia_consumida_total) * 100
