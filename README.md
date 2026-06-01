@@ -2,10 +2,16 @@
 ### Sistema Inteligente de Monitoramento de Missão Espacial
 ### com Módulo de Energias Renováveis e Sustentabilidade
 
-**Missão:** Alpha Century  
-**Equipe:** FIAP COSMICA  
-**Disciplina:** GS2026.1 — Pensamento Computacional e Automação com Python  
-**Tema Global Solution:** Soluções em Energias Renováveis e Sustentáveis (SERS)
+**Missão**: Alpha Century 
+
+**Equipe**: FIAP COSMICA
+
+**Integrantes**:
+Caio Henrique Ferraz da Silva RM:568992 e
+Leonardo Figueredo do Santos RM:573653
+
+**Disciplina**: GS2026.1 — Pensamento Computacional e Automação com Python
+Tema Global Solution: Soluções em Energias Renováveis e Sustentáveis (SERS)
 
 ---
 
