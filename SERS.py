@@ -290,7 +290,7 @@ for ciclo in dados_missao:
     print(f"\n  [ALERTAS ENERGETICOS]")
     print(gerar_alerta_energetico(consumo_ciclo, geracao_ciclo, eficiencia, EFICIENCIA_REFERENCIA))
 
-    # --- Risco e classificacao do ciclo ---
+    #  Risco e classificacao do ciclo
     print(f"\n  Pontuacao de risco do ciclo: {risco_ciclo(ciclo_aux - 1)}")
     print(f"  {classificar_ciclo(sum(pts_ciclos[ciclo_aux - 1]))}")
     print(f"\n  [RECOMENDACOES OPERACIONAIS]")
@@ -359,9 +359,9 @@ print(f"  {classificacao}\n")
 
 print("Conclusao:")
 if classificacao == "MISSAO CRITICA":
-    print("  A missao apresentou situacao critica durante a operacao. Multiplos sistemas")
-    print("  estiveram em risco simultaneamente. E necessario acionar todos os protocolos")
-    print("  de emergencia e priorizar o suporte a vida, energia e comunicacao.")
+    print("  A missao apresentou condicoes criticas durante a operacao da Alpha Century.")
+    print("  Foram identificadas falhas simultaneas em sistemas essenciais, como comunicacao,")
+    print("  suporte a vida, energia ou estabilidade operacional, exigindo acao imediata.")
 elif classificacao == "MISSAO EM ATENCAO":
     print("  A missao apresentou instabilidade relevante durante a operacao. Apesar de")
     print("  nao atingir estado critico, existem sistemas que requerem atencao continua.")
